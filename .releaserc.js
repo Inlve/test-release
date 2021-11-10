@@ -64,7 +64,7 @@ module.exports = {
       '@semantic-release/github',
       {
         // 要发布的文件
-        assets: 'dist/**',
+        assets: 'dist',
       },
     ],
   ],
