@@ -1,0 +1,38 @@
+language: node_js
+node_js:
+  - "14"
+
+before_install:
+  #解密git_deploy_key.enc钥匙进入/ tmp目录/ git_deploy_key
+  - openssl aes-256-cbc -K $encrypted_bea0181439c1_key -iv $encrypted_bea0181439c1_iv -in git_deploy_key.enc -out /tmp/git_deploy_key -d
+  #要保证在当前用户可读取私钥
+  - chmod 600 /tmp/git_deploy_key
+  #创建脚本将密码环境变量返回给 ssh-add
+  - echo 'echo ${SSH_PASSPHRASE}' > /tmp/askpass && chmod +x /tmp/askpass
+  #启动身份验证代理
+  - eval "$(ssh-agent -s)"
+  #将密钥添加到身份验证代理中
+  -DISPLAY=":0.0" SSH_ASKPASS="/tmp/askpass" setid ssh-add /tmp/git_deploy_key </dev/null
+
+install:
+  - npm install
+
+script: echo "Running tests against $(node -v) ..."
+
+jobs:
+  include:
+    - script: echo "Running unit tests (1)"
+    - script: echo "Running unit tests (2)"
+    - stage: deploy
+        script: npm run build
+    # 定义运行语义发布的发布阶段
+    - stage: release
+      node_js: "14"
+      # 高级：可以选择覆盖默认的“script”步骤以跳过测试
+      # script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
+
