@@ -3,6 +3,14 @@
 
 ### Features
 
+* 初始版本 ([1cc1687](https://github.com/Inlve/test-release/commit/1cc1687bec818c95305ae6ae2e21b10ca341b61c))
+* 新功能1 ([130f554](https://github.com/Inlve/test-release/commit/130f554fcf0fdfc5f7ce8d2a5feb60f0f376bc5a))
+
+# 1.0.0 (2021-11-10)
+
+
+### Features
+
 * 新增功能 ([c76ba7f](https://github.com/Inlve/test-release/commit/c76ba7f168080e5169a27cfe02a21779ba96632e))
 * 新增功能1 ([aea9729](https://github.com/Inlve/test-release/commit/aea97295bfe7f18f078637ec5d5862da6652ffaf))
 
