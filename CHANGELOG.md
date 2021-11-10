@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/Inlve/test-release/compare/v1.0.1...v1.1.0) (2021-11-10)
+
+
+### Bug Fixes
+
+* bug修复 ([4fa2af2](https://github.com/Inlve/test-release/commit/4fa2af254fbae49c1a119f0d01b1e33aeca81545)), closes [#2](https://github.com/Inlve/test-release/issues/2)
+
+
+### Features
+
+* 新功能1 ([4324b5b](https://github.com/Inlve/test-release/commit/4324b5bf0bf679c982f903e87cd71caf98e800b0))
+
 ## [1.0.1](https://github.com/Inlve/test-release/compare/v1.0.0...v1.0.1) (2021-11-10)
 
 
